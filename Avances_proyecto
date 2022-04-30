@@ -1,0 +1,136 @@
+package der_proyect;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Karina Chumil
+ */
+public class Interfaz extends javax.swing.JFrame {
+
+    /**
+     * Creates new form Interfaz
+     */
+    public Interfaz() {
+        initComponents();
+    }
+
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        txt_user = new javax.swing.JTextField();
+        txt_password = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        INGRESAR = new javax.swing.JLabel();
+        SALIR = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(153, 255, 0));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txt_user.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        txt_user.setBorder(null);
+        jPanel1.add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 220, 20));
+
+        txt_password.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        txt_password.setBorder(null);
+        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 220, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Usuario.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 30, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Password.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+
+        INGRESAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/loing.png"))); // NOI18N
+        INGRESAR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                INGRESARMouseClicked(evt);
+            }
+        });
+        jPanel1.add(INGRESAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, 40));
+
+        SALIR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/EXIT.png"))); // NOI18N
+        SALIR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SALIRMouseClicked(evt);
+            }
+        });
+        jPanel1.add(SALIR, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
+
+        pack();
+    }// </editor-fold>                        
+
+    private void INGRESARMouseClicked(java.awt.event.MouseEvent evt) {                                      
+        String usuario, contraseña=null;
+        usuario=txt_user.getText();
+        contraseña=txt_password.getText();
+        if (usuario.equals("admin")&& contraseña.equals("admin")){
+            JOptionPane.showMessageDialog(this, "Login Completed");
+        }else{
+            JOptionPane.showMessageDialog(this, "Datos Incorrectos");
+            this.txt_password.setText("");
+        }
+    }                                     
+
+    private void SALIRMouseClicked(java.awt.event.MouseEvent evt) {                                   
+        int a = JOptionPane.YES_NO_OPTION;
+        int resultado = JOptionPane.showConfirmDialog(this, "¿DESEA SALIR?","SALIR",a);
+        if(resultado==0){
+            System.exit(0);
+        }
+    }                                  
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Interfaz().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JLabel INGRESAR;
+    private javax.swing.JLabel SALIR;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField txt_password;
+    private javax.swing.JTextField txt_user;
+    // End of variables declaration                   
+}
