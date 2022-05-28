@@ -1,0 +1,257 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package der_proyect;
+
+import com.sun.org.apache.xalan.internal.xsltc.compiler.Parser;
+import javax.swing.JOptionPane;
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
+import java.util.Random;
+/**
+ *
+ * @author Karina Chumil
+ */
+public class Interfaz extends javax.swing.JFrame {
+
+public static final String ACCOUNT_SID = "AC169154ed787a6f32429c22438b179479";
+public static final String AUTH_TOKEN = "fcb1ac836eabd7ae280a8b58ee1965d4";
+    /**
+     * Creates new form Interfaz
+     */
+    public Interfaz() {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        this.OCULTAR.setVisible(false);
+    }
+
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        txt_user = new javax.swing.JTextField();
+        txt_password = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        INGRESAR = new javax.swing.JLabel();
+        SALIR = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        VER = new javax.swing.JLabel();
+        OCULTAR = new javax.swing.JLabel();
+        CERRAR = new javax.swing.JLabel();
+        MINIMIZAR = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+        addWindowStateListener(new java.awt.event.WindowStateListener() {
+            public void windowStateChanged(java.awt.event.WindowEvent evt) {
+                formWindowStateChanged(evt);
+            }
+        });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txt_user.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        txt_user.setBorder(null);
+        jPanel1.add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 220, 20));
+
+        txt_password.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        txt_password.setBorder(null);
+        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 220, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Usuario.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 30, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Password.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 20));
+
+        INGRESAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/loing.png"))); // NOI18N
+        INGRESAR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                INGRESARMouseClicked(evt);
+            }
+        });
+        jPanel1.add(INGRESAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, 40));
+
+        SALIR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/EXIT.png"))); // NOI18N
+        SALIR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SALIRMouseClicked(evt);
+            }
+        });
+        jPanel1.add(SALIR, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, -1, -1));
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/unlocked-padlock-black-security-symbol_icon-icons.com_54444.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 90, 100));
+
+        VER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/ver.png"))); // NOI18N
+        VER.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VERMouseClicked(evt);
+            }
+        });
+        jPanel1.add(VER, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 40, 20));
+
+        OCULTAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Ocultar.png"))); // NOI18N
+        OCULTAR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OCULTARMouseClicked(evt);
+            }
+        });
+        jPanel1.add(OCULTAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, -1, 20));
+
+        CERRAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Salir.png"))); // NOI18N
+        CERRAR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CERRARMouseClicked(evt);
+            }
+        });
+        jPanel1.add(CERRAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+
+        MINIMIZAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/window_minimize_icon_198591.png"))); // NOI18N
+        MINIMIZAR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MINIMIZARMouseClicked(evt);
+            }
+        });
+        jPanel1.add(MINIMIZAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 40, 30));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        pack();
+    }// </editor-fold>                        
+
+    private void INGRESARMouseClicked(java.awt.event.MouseEvent evt) {                                      
+        String usuario, contraseña=null;
+        usuario=txt_user.getText();
+        contraseña=txt_password.getText();
+        if (usuario.equals("admin")&& contraseña.equals("admin")){
+            
+            // Genera un codigo aleatorio
+            int min = 1000;
+            int max = 9000;            
+            Random random = new Random();
+            String codigo = Integer.toString(random.nextInt(max + min) + min);
+            // Envia mensaje de texto.
+            Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+            Message message = Message.creator(new PhoneNumber("+50231391709"),
+            new PhoneNumber("+19206956413"), 
+            "Bienvenido a nuestro sistema tu codigo es:"+ codigo).create();
+            System.out.println(message.getSid());
+            // Validar codigo SMS
+            String cod2 = JOptionPane.showInputDialog(this,"Ingresa el codigo enviado a tu telefono:");
+
+            if(cod2 == null ? codigo == null : cod2.equals(codigo))
+            {
+            JOptionPane.showMessageDialog(this, "Bienvenido");
+            }
+            else
+            {
+            JOptionPane.showMessageDialog(this, "Error: El codigo es incorrecto.");
+            }
+
+            
+    
+            
+        }else{
+            JOptionPane.showMessageDialog(this, "Datos Incorrectos");
+            this.txt_password.setText("");
+        }
+    }                                     
+
+    private void SALIRMouseClicked(java.awt.event.MouseEvent evt) {                                   
+        int a = JOptionPane.YES_NO_OPTION;
+        int resultado = JOptionPane.showConfirmDialog(this, "¿DESEA SALIR?","SALIR",a);
+        if(resultado==0){
+            System.exit(0);
+        }
+    }                                  
+
+    private void OCULTARMouseClicked(java.awt.event.MouseEvent evt) {                                     
+        VER.setVisible(true);
+        OCULTAR.setVisible(false);
+        txt_password.setEchoChar('●');
+    }                                    
+
+    private void VERMouseClicked(java.awt.event.MouseEvent evt) {                                 
+        VER.setVisible(false);
+        OCULTAR.setVisible(true);
+        txt_password.setEchoChar((char)0);
+    }                                
+
+    private void MINIMIZARMouseClicked(java.awt.event.MouseEvent evt) {                                       
+        this.setState(Interfaz.ICONIFIED);
+    }                                      
+
+    private void CERRARMouseClicked(java.awt.event.MouseEvent evt) {                                    
+        int a = JOptionPane.YES_NO_OPTION;
+        int resultado = JOptionPane.showConfirmDialog(this, "¿DESEA SALIR?","SALIR",a);
+        if(resultado==0){
+            System.exit(0);
+        }
+    }                                   
+
+    private void formWindowStateChanged(java.awt.event.WindowEvent evt) {                                        
+        // TODO add your handling code here:
+    }                                       
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Interfaz().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JLabel CERRAR;
+    private javax.swing.JLabel INGRESAR;
+    private javax.swing.JLabel MINIMIZAR;
+    private javax.swing.JLabel OCULTAR;
+    private javax.swing.JLabel SALIR;
+    private javax.swing.JLabel VER;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField txt_password;
+    private javax.swing.JTextField txt_user;
+    // End of variables declaration                   
+}
